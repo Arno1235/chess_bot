@@ -1,5 +1,7 @@
 import chess
 
+import random
+
 
 class Bot():
     def __init__(self):
@@ -9,5 +11,6 @@ class Bot():
         return "Leo"
 
     def move(self, board):
-        move = chess.Move.from_uci("e2e4")
-        return move
+        moves = list(board.legal_moves)
+
+        return random.choice(moves)
